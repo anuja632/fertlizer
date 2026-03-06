@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    :root{
+
+  /* Brand Colors */
+  --primary-color: #DC2C1F;
+  --primary-light: #ff5a4d;
+  --secondary-color: #FEC500;
+
+  /* Text Colors */
+  --text-dark: #111111;
+  --text-light: #777777;
+  --text-muted: #B2B2B2;
+
+  /* Background Colors */
+  --bg-light: #f3f3f3;
+  --bg-input: #fafafa;
+  --white: #ffffff;
+
+  /* Border & Shadow */
+  --border-color: #e0e0e0;
+  --shadow-soft: 0 25px 60px rgba(0,0,0,0.08);
+  --shadow-button: 0 10px 25px #dc2c1f4d;
+
+  /* Fonts */
+  --font-heading:'Farmhouse', serif;
+--font-primary: 'Noto Serif';
+
+  /* --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Playfair Display', serif; */
+}
+
+body{
+font-family:Arial;
+background:#f5f6f7;
+}
+body{
+font-family:var(--font-primary);
+background:var(--bg-light);
+}
+
+/* Banner */
+
+.page-banner{
+background:var(--primary-color);
+color:var(--white);
+text-align:center;
+padding:90px 20px;
+}
+
+.page-banner h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.page-banner p{
+color:#ffe8e6;
+}
+
+/* Section */
+
+.products-section{
+padding:70px 8%;
+}
+
+/* Sidebar */
+
+.category-menu{
+background:var(--white);
+padding:25px;
+border-radius:10px;
+box-shadow:var(--shadow-soft);
+}
+
+.category-menu li{
+list-style:none;
+margin-bottom:10px;
+}
+
+.category-menu a{
+text-decoration:none;
+display:block;
+padding:12px 15px;
+border-radius:6px;
+color:var(--text-dark);
+transition:0.3s;
+font-weight:500;
+}
+
+.category-menu a:hover,
+.category-menu a.active{
+background:var(--primary-color);
+color:var(--white);
+}
+
+/* Search */
+
+.search-box{
+margin-bottom:30px;
+}
+
+.search-box input{
+width:100%;
+padding:12px 15px;
+border:1px solid var(--border-color);
+border-radius:6px;
+background:var(--bg-input);
+outline:none;
+}
+
+.search-box input:focus{
+border-color:var(--primary-color);
+}
+
+/* Product Card */
+
+.product-card{
+background:var(--white);
+border-radius:12px;
+padding:18px;
+text-align:center;
+box-shadow:var(--shadow-soft);
+transition:0.35s;
+cursor:pointer;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.product-card img{
+width:100%;
+height:260px;
+object-fit:contain;
+border-radius:10px;
+transition:0.35s;
+}
+
+.product-card:hover img{
+transform:scale(1.08);
+}
+
+.product-card h5{
+margin-top:12px;
+font-size:18px;
+color:var(--text-dark);
+}
+
+/* Modal */
+
+.modal-content{
+border-radius:10px;
+border:none;
+}
+
+.modal-title{
+color:var(--primary-color);
+font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Banner -->
+
+<section class="page-banner">
+<h1>Our Products</h1>
+<p>Advanced agricultural solutions for healthy crops</p>
+</section>
+
+<section class="products-section">
+
+<div class="container-fluid">
+
+<div class="row">
+
+<!-- Sidebar -->
+
+<div class="col-md-3">
+
+<ul class="category-menu">
+
+<li><a href="#" class="active" data-category="all">All Products</a></li>
+<li><a href="#" data-category="micro">Micro Nutrient Mixture</a></li>
+<li><a href="#" data-category="secondary">Secondary Nutrients</a></li>
+<li><a href="#" data-category="technology">Technology Transfer Products</a></li>
+<li><a href="#" data-category="bio">Bio Stimulants</a></li>
+<li><a href="#" data-category="wetting">Wetting Agents</a></li>
+<li><a href="#" data-category="growth">Plant Growth Regulator</a></li>
+<li><a href="#" data-category="neem">Neem Based Products</a></li>
+<li><a href="#" data-category="virus">Virus Controller</a></li>
+<li><a href="#" data-category="edta">EDTA & EDDHA Products</a></li>
+<li><a href="#" data-category="fco">FCO Grade - Single Nutrients</a></li>
+<li><a href="#" data-category="special">Special Products</a></li>
+
+</ul>
+
+</div>
+
+<!-- Products Area -->
+
+<div class="col-md-9">
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search products...">
+</div>
+
+<div class="row" id="productContainer"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Product Modal -->
+
+<div class="modal fade" id="productModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title" id="modalTitle"></h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body text-center">
+
+<img id="modalImg" style="width:100%;margin-bottom:15px" loading="lazy" alt="Products">
+
+<p id="modalDesc"></p>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<!-- Shapes -->
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape1.png" class="shape shape4">
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape2.png" class="shape shape5">
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape3.png" class="shape shape6">
+
+<div class="container">
+
+<div class="row">
+
+<!-- Column 1 -->
+<div class="footer-col">
+
+<img src="assests/images/slogowhite.png" class="footer-logo">
+
+<p>
+Trusted in agricultural excellence, we supply quality fertilizers and plant nutrients to help farmers achieve stronger crops and better results.
+</p>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+</div>
+
+
+<!-- Column 2 -->
+<div class="footer-col">
+
+<h5>Quick Links</h5>
+
+<ul>
+<li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="#"><i class="fa-solid fa-user"></i> About Us</a></li>
+<li><a href="#"><i class="fa-solid fa-seedling"></i> Products</a></li>
+<li><a href="#"><i class="fa-solid fa-image"></i> Gallery</a></li>
+<li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+</ul>
+
+</div>
+
+
+<!-- Column 3 -->
+<div class="footer-col">
+
+<h5>Products</h5>
+
+<ul>
+<li><a href="#"><i class="fa-solid fa-leaf"></i> Organic Fertilizers</a></li>
+<li><a href="#"><i class="fa-solid fa-flask"></i> Micronutrients</a></li>
+<li><a href="#"><i class="fa-solid fa-seedling"></i> Bio Stimulants</a></li>
+<li><a href="#"><i class="fa-solid fa-chart-line"></i> Plant Growth Boosters</a></li>
+<li><a href="#"><i class="fa-solid fa-mountain-sun"></i> Soil Conditioners</a></li>
+</ul>
+
+</div>
+
+
+<!-- Column 4 -->
+<div class="footer-col">
+
+<h5>Contact Info</h5>
+
+<div class="footer-contact">
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+# 55, 1A1, Puthur Itteri Road,
+Nethimedu, Salem - 636002.
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+thescientificchemicals@gmail.com
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+8122941004
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Scientific Chemicals. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
+<!-- PRELOADER -->
+<div id="preloader">
+
+<div class="loader-circle">
+<i class="fa-solid fa-leaf"></i>
+</div>
+
+<div class="loading-text">LOADING...</div>
+
+</div>
+
+<script>
+
+window.addEventListener("load", function(){
+document.getElementById("preloader").style.display="none";
+});
+
+</script>
+<!-- Floating Call Button -->
+<a href="tel:8122941004" class="float-call">
+<i class="fa-solid fa-phone"></i>
+</a>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/918122941004?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20fertilizer%20products" 
+class="float-whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+<!-- Scroll Button -->
+<button id="scrollTop">
+<i class="fa-solid fa-chevron-up"></i>
+</button>
+
+
+<script>
+    
+
+/* Scroll to top button */
+
+const scrollBtn = document.getElementById("scrollTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 200){
+scrollBtn.style.display="block";
+}else{
+scrollBtn.style.display="none";
+}
+}
+
+scrollBtn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Message Submitted Successfully!");
+});
+</script>
+<script src="assests/js/script.js"></script>
+<script src="assests/js/test.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+
+</body>
+</html>

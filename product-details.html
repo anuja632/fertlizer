@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Scientific Chemicals</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="assests/css/style.css">
+<style>
+
+body{
+font-family:Arial;
+background:#f5f6f7;
+}
+
+/* Section */
+
+.product-section{
+padding:80px 5%;
+}
+
+/* Product Box */
+
+.product-box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.product-box img{
+width:100%;
+height:350px !important;
+object-fit:contain;
+}
+
+.product-title{
+font-size:30px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.product-desc{
+color:#666;
+font-size:16px;
+line-height:1.7;
+}
+
+/* Features */
+
+.feature-list{
+margin-top:20px;
+}
+
+.feature-list li{
+margin-bottom:10px;
+list-style:none;
+}
+
+.feature-list i{
+color:#28a745;
+margin-right:8px;
+}
+
+/* Dosage */
+
+.dosage-box{
+background:#fff8f7;
+padding:20px;
+border-radius:10px;
+margin-top:25px;
+}
+
+.dosage-box h5{
+margin-bottom:10px;
+}
+
+/* Button */
+
+.back-btn{
+margin-top:25px;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ===============================
+     TOP BAR
+================================= -->
+<div class="topbar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+    <!-- Left Side Info -->
+    <div class="topbar-info d-flex flex-wrap align-items-center">
+
+      <span class="me-4">
+        <i class="fa-solid fa-location-dot"></i>
+        Salem, Tamil Nadu - 636002
+      </span>
+
+      <span class="me-4">
+        <i class="fa-regular fa-envelope"></i>
+        thescientificchemicals@gmail.com
+      </span>
+
+      <span>
+        <i class="fa-solid fa-phone"></i>
+        8122941004
+      </span>
+
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===============================
+     NAVBAR
+================================= -->
+<nav class="navbar navbar-expand-lg navbar-scientific sticky-top">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="assests/images/slogo.jpeg" alt="Scientific Chemicals Logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScientific">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarScientific">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+
+        <!-- PRODUCTS DROPDOWN -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+
+<li><a class="dropdown-item" href="products.html?cat=micro">Micro Nutrient Mixture</a></li>
+<li><a class="dropdown-item" href="products.html?cat=secondary">Secondary Nutrients</a></li>
+<li><a class="dropdown-item" href="products.html?cat=technology">Technology Transfer Products</a></li>
+<li><a class="dropdown-item" href="products.html?cat=bio">Bio Stimulants</a></li>
+<li><a class="dropdown-item" href="products.html?cat=wetting">Wetting Agents</a></li>
+<li><a class="dropdown-item" href="products.html?cat=growth">Plant Growth Regulator</a></li>
+<li><a class="dropdown-item" href="products.html?cat=neem">Neem Based Products</a></li>
+<li><a class="dropdown-item" href="products.html?cat=virus">Virus Controller</a></li>
+<li><a class="dropdown-item" href="products.html?cat=edta">EDTA & EDDHA Products</a></li>
+<li><a class="dropdown-item" href="products.html?cat=fco">FCO Grade - Single Nutrients</a></li>
+<li><a class="dropdown-item" href="products.html?cat=special">Special Products</a></li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- GET QUOTE BUTTON -->
+    <a href="contact.html" class="btn btn-lab ms-lg-3">Get Quote</a>
+
+  </div>
+</nav>
+
+
+
+<!-- ===============================
+     PAGE BANNER
+================================= -->
+<section class="page-banner about-banner">
+  <div class="banner-content">
+    <h1>Product Details</h1>
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      Product Details
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="product-section">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<!-- Product Image -->
+
+<div class="col-md-6 text-center">
+<img id="pImg" style="max-height: 500px;">
+</div>
+
+<!-- Product Info -->
+
+<div class="col-md-6">
+
+<div class="product-box">
+
+<h2 class="product-title" id="pName"></h2>
+
+<p class="product-desc" id="pDesc" ></p>
+
+<!-- Features -->
+
+<ul class="feature-list">
+
+<li><i class="fa-solid fa-seedling"></i> Improves plant growth</li>
+
+<li><i class="fa-solid fa-leaf"></i> Enhances nutrient absorption</li>
+
+<li><i class="fa-solid fa-wheat-awn"></i> Increases crop yield</li>
+
+<li><i class="fa-solid fa-shield-halved"></i> Protects plants from stress</li>
+
+</ul>
+
+<!-- Dosage -->
+
+<div class="dosage-box">
+
+<h5><i class="fa-solid fa-flask"></i> Recommended Dosage</h5>
+
+<p>
+Foliar Spray : 2–3 ml per liter of water<br>
+Soil Application : 500 ml per acre
+</p>
+
+</div>
+
+<a href="products.html" class="btn btn-danger back-btn">
+
+<i class="fa-solid fa-arrow-left"></i> Back to Products
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const product = JSON.parse(localStorage.getItem("product"));
+
+if(product){
+
+document.getElementById("pName").innerText = product.name;
+document.getElementById("pImg").src = product.img;
+document.getElementById("pDesc").innerText = product.desc;
+
+}else{
+
+document.getElementById("pName").innerText = "Product Not Found";
+document.getElementById("pDesc").innerText = "Please return to the products page.";
+
+}
+
+</script>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<!-- Shapes -->
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape1.png" class="shape shape4">
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape2.png" class="shape shape5">
+<img src="https://themazine.com/mr/slando/assets/images/shapes/footer-v1-shape3.png" class="shape shape6">
+
+<div class="container">
+
+<div class="row">
+
+<!-- Column 1 -->
+<div class="footer-col">
+
+<img src="assests/images/slogowhite.png" class="footer-logo">
+
+<p>
+Trusted in agricultural excellence, we supply quality fertilizers and plant nutrients to help farmers achieve stronger crops and better results.
+</p>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+</div>
+
+
+<!-- Column 2 -->
+<div class="footer-col">
+
+<h5>Quick Links</h5>
+
+<ul>
+<li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="#"><i class="fa-solid fa-user"></i> About Us</a></li>
+<li><a href="#"><i class="fa-solid fa-seedling"></i> Products</a></li>
+<li><a href="#"><i class="fa-solid fa-image"></i> Gallery</a></li>
+<li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+</ul>
+
+</div>
+
+
+<!-- Column 3 -->
+<div class="footer-col">
+
+<h5>Products</h5>
+
+<ul>
+<li><a href="#"><i class="fa-solid fa-leaf"></i> Organic Fertilizers</a></li>
+<li><a href="#"><i class="fa-solid fa-flask"></i> Micronutrients</a></li>
+<li><a href="#"><i class="fa-solid fa-seedling"></i> Bio Stimulants</a></li>
+<li><a href="#"><i class="fa-solid fa-chart-line"></i> Plant Growth Boosters</a></li>
+<li><a href="#"><i class="fa-solid fa-mountain-sun"></i> Soil Conditioners</a></li>
+</ul>
+
+</div>
+
+
+<!-- Column 4 -->
+<div class="footer-col">
+
+<h5>Contact Info</h5>
+
+<div class="footer-contact">
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+# 55, 1A1, Puthur Itteri Road,
+Nethimedu, Salem - 636002.
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+thescientificchemicals@gmail.com
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+8122941004
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Scientific Chemicals. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+<!-- PRELOADER -->
+<div id="preloader">
+
+<div class="loader-circle">
+<i class="fa-solid fa-leaf"></i>
+</div>
+
+<div class="loading-text">LOADING...</div>
+
+</div>
+
+<script>
+
+window.addEventListener("load", function(){
+document.getElementById("preloader").style.display="none";
+});
+
+</script>
+<!-- Floating Call Button -->
+<a href="tel:8122941004" class="float-call">
+<i class="fa-solid fa-phone"></i>
+</a>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/918122941004?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20fertilizer%20products" 
+class="float-whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Scroll Button -->
+<button id="scrollTop">
+<i class="fa-solid fa-chevron-up"></i>
+</button>
+
+
+<script>
+
+/* Scroll to top button */
+
+const scrollBtn = document.getElementById("scrollTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 200){
+scrollBtn.style.display="block";
+}else{
+scrollBtn.style.display="none";
+}
+}
+
+scrollBtn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Message Submitted Successfully!");
+});
+</script>
+<script src="assests/js/script.js"></script>
+<script src="assests/js/test.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+
+</body>
+</html>
